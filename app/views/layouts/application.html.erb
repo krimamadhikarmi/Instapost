@@ -3,6 +3,8 @@
   <head>
     <title>Instapost</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&display=swap" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,11 +13,14 @@
   </head>
 
   <body>
+    <%= render 'shared/nav' %>   
+    <%# <%= link_to 'New Post',new_post_path, class: "text-[#337ab7]"%>  
     <%= yield %>
     <% flash.each do |key, value| %>
        <div class="alert alert-<%= key %>">
            <%= value %>
        </div>
     <% end %>
+    
   </body>
 </html>

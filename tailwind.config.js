@@ -6,7 +6,17 @@ module.exports = {
     './app/javascript/**/*.js',
     './node_modules/flowbite/**/*.js'
   ],
-  plugins: [
-    require('flowbite/plugin')
-  ]
+  theme: {
+    'fontFamily': {
+      'open-sans': ['Open Sans', 'sans-serif'],
+      'dosis': ['Dosis', 'sans-serif'],
+      'pacifico': ['Pacifico', 'sans-serif']
+    }
+  },
+  'colors': {
+    'primary': {
+      500: '#337ab7'
+    }
+  },
+  
 }
