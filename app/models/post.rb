@@ -4,4 +4,6 @@ class Post < ApplicationRecord
   has_one_attached :photo
 
   validates :photo, :description, :user_id, presence: true
+
+  has_many :comments
 end
