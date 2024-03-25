@@ -1,9 +1,16 @@
-<h1>New user</h1>
-
-<%= render "form", user: @user %>
-
-<br>
-
+<%# <h1>New user</h1> %>
+<div class="max-w-4xl mx-auto">
+  <div class="mt-10 md:w-[50%] rounded overflow-hidden shadow-xl shadow-gray-600 mx-auto">
+    <div class="px-6 py-4 h-full bg-stone-300">
+      <div class="mb-5">
+        <h4 class="text-2xl font-bold dark:text-black">New User</h4>
+      </div>
+      <%= render "form", user: @user %>
+      <div class="mb-5 px-2">
+        <%= button_to "Back to users", users_path, method: :get, class: "text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800" %>
+      </div>
+    </div>
+  </div>
 <div>
-  <%= link_to "Back to users", users_path %>
-</div>
+
+

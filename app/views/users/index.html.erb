@@ -1,17 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Users</h1>
-
-<div id="users">
+<div class="mb-5 max-w-sm mx-auto">
+  <h4 class="text-2xl font-bold dark:text-blue-400">Users</h4>
+</div>
+<div class="mb-5 max-w-sm mx-auto">
   <% @users.each do |user| %>
-    <%= render user %>
-    <p>
-      <%# <%= link_to "Show this user", user %> 
-      <%= link_to 'Login',login_path(user)%> |
-      <%= link_to 'Edit', edit_user_path(user)%>
-      
-    </p>
+    <div class="mb-4 rounded overflow-hidden shadow-lg shadow-stone-500">
+      <div class="px-6 py-8 mb-4 h-full">
+         <%= render user %>
+         <div class="mt-4">
+          <%= link_to 'Login',login_path(user),class:"text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"%> 
+          <%= link_to 'Edit', edit_user_path(user), class:'text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2'%>
+         </div>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New user", new_user_path %>
+<div class="mb-5 max-w-sm mx-auto" >
+  <%= link_to "New user", new_user_path ,class: 'text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2'%>
+</div>

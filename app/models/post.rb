@@ -7,5 +7,7 @@ class Post < ApplicationRecord
 
   has_many :comments, dependent: :destroy
 
+  delegate :email, to: :user, prefix: true
+
   acts_as_votable
 end

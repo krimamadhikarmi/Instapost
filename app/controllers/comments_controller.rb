@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
   before_action :set_post
   before_action :set_comment, only: [:edit, :update, :destroy]
-  before_action :is_owner?, only: [:edit, :update, :destroy]
+  before_action :is_comment_owner?, only: [:edit, :update, :destroy]
+  
 
   def create
     @post = Post.find(params[:post_id])
@@ -48,9 +49,11 @@ class CommentsController < ApplicationController
     @comment = @post.comments.find(params[:id])
   end
 
-  def is_owner?
+  def is_comment_owner?
     redirect_to root_path if Comment.find(params[:id]).user != current_user
   end
+
+  
 
   
 end

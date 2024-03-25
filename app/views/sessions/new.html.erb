@@ -3,18 +3,23 @@
     <span class="font-medium"><%= alert %></span>
   </div>
 <% end %>
-<h4>Login</h4>
-<%= form_tag sessions_path do |form| %>
-  <div>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
+<div class="max-w-4xl mx-auto">
+  <div class="mt-12 md:w-[50%] rounded overflow-hidden shadow-xl shadow-gray-600 mx-auto">
+    <div class="px-6 py-8 h-full bg-stone-300">
+        <%= form_tag sessions_path do |form| %>
+          <div class="mb-5 px-3">
+            <%= label_tag :email, "Your email", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-black" %>
+            <%= text_field_tag :email, nil, class: "bg-stone-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-stone-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "Email", required: true %>
+          </div>
+          <div class="mb-5 px-3">
+            <%= label_tag :password, "Your password", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-black" %>
+            <%= password_field_tag :password, nil, class: "bg-stone-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-stone-100 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray dark:focus:ring-blue-500 dark:focus:border-blue-500", placeholder: "Password",required: true %>
+          </div>
+          <div class="flex justify-center">
+            <%= submit_tag "Submit", class: "text-white bg-gray-500 hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800" %>
+          </div>
+        <%end%>
+    </div>
   </div>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-  </div>
-  <div>
-    <%= submit_tag "Login" %>
-  </div>
-<% end %>
-<% link_to %>
+</div>
+

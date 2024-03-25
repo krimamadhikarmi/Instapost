@@ -1,11 +1,15 @@
-
+<div class= "px-2">
+    <div class="font-bold text-xl mb-2">
       <%= @user.email.split('@').first %>
-
       <%= pluralize(@user.posts.count, 'post') %>
-
-      <% @user.posts.each do |post| %>
-        <%= image_tag post.photo %>
-      <% end %>
-
- 
-
+    </div>
+    <div class="mb-4 max-w-xl grid grid-cols-2 gap-4 place-content-center h-45">
+    <% @user.posts.each do |post| %>
+        <div class="rounded overflow-hidden shadow-lg ">
+            <div class="px-6 py-6">
+                <%= image_tag post.photo %>
+            </div>
+        </div>
+    <% end %>
+   </div>
+</div>
